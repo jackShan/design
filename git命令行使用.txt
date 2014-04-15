@@ -1,0 +1,44 @@
+git常用命令意义：
+git add       将工作区的内容保存到暂存区
+git checkout  将暂存区的内容覆盖工作区
+git commit    将暂存区的内容保存到版本库
+git reset     默认情况下是将版本库的内容覆盖工作区
+git diff      也有三种情况，分别是比较工作区与暂存区，工作区与版本库，暂存区与版本库之间的差别
+git push      将本地版本库同步到远程版本库
+
+如果是从头创建版本库，可以采用先克隆，建立提交数据，最后再通过推送完成GitHub版本库的初始化。
+
+步骤如下：
+
+1.克隆版本库
+克隆过程会显示警告，不过这个警告可以忽略，因为GitHub创建的版本库本来就是一个空白的版本库。
+
+命令：
+$ git clone git@github.com:项目路径.get
+例如：$ git clone git@github.com:jackShan/design.get
+
+2.创建文件
+
+命令：
+$ touch README
+$ ls README
+
+3.编辑README ,添加文件（或修改）
+
+命令：
+$ git add README
+
+如果是添加所有修改，可在add后加参数 -A.例如
+$ git add -A
+
+add 后参数用法请参考github文档
+
+4.提交修改
+
+命令：
+$ git commit -m "注释说明"
+
+5.向github推送，完成修改
+
+命令：
+$ git push origin master 
